@@ -1,0 +1,37 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "taskName": "run server",
+            "type": "shell",
+            "command": "mvn package; chmod u+x target/Server-1.0-SNAPSHOT.jar; java -jar target/Server-1.0-SNAPSHOT.jar 5000",
+            "group": "build"
+        },
+        {
+            "taskName": "package server",
+            "type": "shell",
+            "command": "mvn package",
+            "group": "build"
+        },
+        {
+            "taskName": "install server",
+            "type": "shell",
+            "command": "mvn install",
+            "group": "build"
+        },
+        {
+            "taskName": "compile server",
+            "type": "shell",
+            "command": "mvn compile",
+            "group": "build"
+        },
+        {
+            "taskName": "verify server",
+            "type": "shell",
+            "command": "mvn -B verify",
+            "group": "build"
+        }
+    ]
+}
